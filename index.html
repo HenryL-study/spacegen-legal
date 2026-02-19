@@ -4,65 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        /* Simple styling to make it look clean */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta name="description"
+        content="SpaceGen - Redesign your living space instantly with AI. Visualize different styles and transform your home.">
+    <title>SpaceGen - Redesign Your Space with AI</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Favicon would go here -->
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>About Us</h1>
-        <p>Welcome to SpaceGen developed by Padio.</p>
-        <p>If you have any questions or inquiries, please feel free to reach out to us at:</p>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">SpaceGen</a>
+                <div class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="mailto:spacegen2026@gmail.com" class="btn-primary">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <p>
-            <a href="mailto:spacegen2026@gmail.com">spacegen2026@gmail.com</a>
-        </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-heading animate-fade-in">
+                <img src="iOS%20Phones%20%206.5/AppIcon.png" alt="SpaceGen App Icon" class="app-icon">
+                <h1>Redesign Your Space<br>Instantly with AI</h1>
+            </div>
+            <p class="animate-fade-in animate-delay-200">
+                Transform your room with a single photo. Explore new styles, visualize furniture, and bring your dream
+                home to life.
+            </p>
+            <a href="#" class="btn-primary animate-fade-in animate-delay-300">Download on App Store</a>
 
-        <p>&copy; 2026 Padio LLC. All rights reserved.</p>
-    </div>
+            <!-- Before/After Slider -->
+            <div class="hero-slider-container animate-fade-in animate-delay-300">
+                <img src="iOS%20Phones%20%206.5/IMG_0040.PNG" alt="After Design" class="slider-image after">
+                <div class="slider-image before" id="beforeImage">
+                    <img src="iOS%20Phones%20%206.5/IMG_0039.PNG" alt="Before Design" id="beforeInnerImage">
+                </div>
+                <div class="slider-handle" id="sliderHandle"></div>
+                <input type="range" min="0" max="100" value="50" class="slider-range" id="sliderRange"
+                    aria-label="Before and after comparison slider">
+            </div>
+
+            <p class="animate-fade-in animate-delay-300"
+                style="font-size: 0.9rem; margin-top: 1rem; color: var(--light-text);">Drag to see the transformation
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const sliderRange = document.getElementById('sliderRange');
+        const beforeImage = document.getElementById('beforeImage');
+        const sliderHandle = document.getElementById('sliderHandle');
+        const sliderContainer = document.querySelector('.hero-slider-container');
+        const innerImage = document.getElementById('beforeInnerImage');
+
+        // Adjust inner image size on resize to match container
+        function updateImageSize() {
+            const width = sliderContainer.offsetWidth;
+            const height = sliderContainer.offsetHeight;
+            innerImage.style.width = width + 'px';
+            innerImage.style.height = height + 'px';
+        }
+
+        // Wait for image to load to get correct dimensions
+        window.addEventListener('load', updateImageSize);
+        window.addEventListener('resize', updateImageSize);
+
+        sliderRange.addEventListener('input', (e) => {
+            const value = e.target.value;
+            beforeImage.style.width = value + '%';
+            sliderHandle.style.left = value + '%';
+        });
+    </script>
+
+    <!-- App Showcase / Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience the Magic</h2>
+                <p>From modern minimalism to classic elegance, see what SpaceGen can do.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/03.png" alt="Interior Design Style 1">
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/04.png" alt="Interior Design Style 2">
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/05.png" alt="Interior Design Style 3">
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/06.png" alt="Interior Design Style 4">
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/07.png" alt="Interior Design Style 5">
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="iOS%20Phones%20%206.5/08.png" alt="Interior Design Style 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>SpaceGen</h3>
+                    <p>Padio LLC.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="mailto:spacegen2026@gmail.com">Support</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Padio LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
