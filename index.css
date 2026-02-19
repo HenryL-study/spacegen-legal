@@ -108,6 +108,15 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
 }
 
 .nav-links {
@@ -159,7 +168,7 @@ nav {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -296,14 +305,7 @@ nav {
     /* Hiding the old class */
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .hero-slider-container {
-        width: 260px;
-        height: 563px;
-        /* Proportional scaling */
-    }
-}
+/* Mobile responsive rules consolidated at bottom */
 
 /* Features/Gallery Grid */
 .features {
@@ -409,25 +411,68 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 40px;
     }
 
-    .hero-images {
+    .hero-heading {
+        flex-direction: column;
+        /* Stack icon on top of title */
+        gap: 1rem;
+    }
+
+    .app-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-slider-container {
+        max-width: 95vw;
+        margin: 2rem auto 1rem;
+    }
+
+    .slider-image.after {
+        max-height: 60vh;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .features {
+        padding: 3rem 0;
+    }
+
+    .footer-content {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        text-align: center;
     }
 
-    .hero-phone {
-        width: 240px;
-        transform: none !important;
-        /* Reset 3D transform on mobile */
-        margin-top: 0 !important;
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .nav-links {
         display: none;
-        /* Simplify for mobile for now */
+        /* Simplify nav for mobile */
     }
 }
