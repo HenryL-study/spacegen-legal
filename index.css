@@ -154,6 +154,17 @@ nav {
     /* Slightly lighter than primary */
 }
 
+.app-store-btn {
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+}
+
+.app-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 /* Hero Section */
 .hero {
     padding-top: 160px;
